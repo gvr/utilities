@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Predictive Bank</title>
+<link rel="stylesheet" type="text/css" href="styles/default.css">
+</head>
+<body>
+
+<img class="header" src="images/logo.png" alt="ing" />
+<h1 class="header">TRANSACTION MESSAGE RELAY</h1>
+<h2 class="header">Management Console</h2>
+
+<h1>Example</h1>
+To test the application use for example the following link to subscribe (opens in a new screen): <a target="blank" href="api/testUser/testAction">api/testUser/testAction</a>.
+Then execute <code>curl</code> commands with messages.
+<div class="code">curl -X POST -H "Content-Type: application/json" -d '{"id":"1","user":"testUser","action":"testAction","body":{"bla":"testjsonobject","zzz":[1,3,3]}}' http://localhost:8080/relay</div>
+Every user/action combination is pushed to a connection opened as api/&lt;user&gt;/&lt;test&gt;.
+
+<h1>Menu</h1>
+<form id="exit" action="shutdown" method="post">
+Stop the show <button type="button" value="shutdown" onclick="exit.submit()">shutdown</button>
+</form>
+
+<div class="footer">transaction message relay * management console * 2013</div>
+<img class="footer" src="images/sirius.png" alt="ing" />
+
+</body>
+</html>

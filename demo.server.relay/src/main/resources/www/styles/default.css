@@ -1,0 +1,132 @@
+@font-face {
+    font-family: dijkstra;
+    src: url('fonts/dijkstra.eot');
+    src: url('fonts/dijkstra.eot?#iefix') format('embedded-opentype'),
+         url('fonts/dijkstra.woff') format('woff'),
+         url('fonts/dijkstra.ttf') format('truetype'),
+         url('fonts/dijkstra.svg#dijkstraregular') format('svg');
+    font-weight: normal;
+    font-style: normal;
+
+}
+
+/*
+colors:
+ing-orange: #FF8C00
+ing-blue:   #003366 
+ing-silver: #C0C0C0
+*/
+
+html {
+}
+
+body {
+	font-family: dijkstra;
+	font-size: 14pt;
+	margin-top: 64px;
+	margin-left: 80px;
+	background-color: #FFFFF0;
+	color: #1020b0;
+}
+
+img.header {
+	position: absolute;
+	top: 64px;
+	left: 0px;
+	width: 64px;
+	height: 64px;
+	box-shadow: 3px 2px 8px #888;
+}
+
+h1.header {
+	font-family: rockwell;
+	color: #FF8C00;
+	margin: 0px;
+	text-shadow: 3px 2px 8px #888;
+}
+
+h2.header {
+	font-family: rockwell;
+	font-weight: normal;
+	color: #003366;
+	margin: 0px;
+	margin-bottom: 64px;
+	text-shadow: 3px 2px 8px #888;
+}
+
+code {
+	font-size: 14px;
+}
+
+div.code {
+	font-family: courier;
+	font-size: 14px;
+	margin: 10px;
+	padding: 10px;
+	color: #003366;
+	background-color: #FFFFFF;
+	border: 1px solid #F3F3E9;
+}
+
+img.footer {
+	position: fixed;
+	bottom: 0px;
+	right: 0px;
+	width: 64px;
+	height: 64px;
+}
+
+div.footer  {
+	font-family: courier;
+	font-size: 12px;
+	color: #003366;
+	position: fixed;
+	right: 64px;
+	bottom: 25px;
+	text-align: right;
+}
+
+h1 {
+	margin-top: 1cm;
+	font-size: larger;
+}
+
+ul {
+	list-style-type: none;
+	margin-top: 0px;
+	margin-left: 0cm;
+	padding-left: 1cm;
+	text-indent: -1em;
+}
+
+li:before {
+	content: "* ";
+}
+
+li {
+}
+
+img {
+	border: 0;
+}
+
+a {
+	color: #FF8C00;	
+	background-color: transparent;
+}
+
+a:link {
+	text-decoration: none;
+}
+
+a:visited {
+	text-decoration: none;
+}
+
+a:hover {
+	text-decoration: underline;
+}
+
+a:active {
+	text-decoration: none;
+}
