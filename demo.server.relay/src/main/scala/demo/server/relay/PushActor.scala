@@ -15,23 +15,24 @@ import spray.http.HttpHeaders._
 import spray.http.CacheDirectives._
 import spray.json.JsObject
 import spray.json.JsString
+import spray.http.MediaTypes
 
 class PushActor(ctx: RequestContext) extends Actor with ActorLogging {
 
   import context._
 
-  private val `application/json` = MediaType.custom("application/json")
+  private val `text/event-stream` = MediaType.custom("text/event-stream")
 
-  private val responseStartMessage = JsObject(List("subscription" -> JsString("active")))
+  MediaTypes.register(`text/event-stream`)
 
-  val responseStart = HttpResponse(entity = HttpEntity(`application/json`, responseStartMessage.prettyPrint))
+  val responseStart = HttpResponse(entity = HttpEntity(`text/event-stream`, ":\n\n"))
     .withHeaders(List(`Cache-Control`(`no-cache`)))
 
   ctx.responder ! ChunkedResponseStart(responseStart)
 
   def receive = {
     case json: JsValue => {
-      val nextChunk = MessageChunk(json.prettyPrint)
+      val nextChunk = MessageChunk("data: " + json.toString() + "\n\n")
       ctx.responder ! nextChunk
     }
     case e: Http.ConnectionClosed =>
